@@ -42,7 +42,7 @@ bool isValidType(string text) {
   char temp[10];
   strcpy(temp, text.c_str()); // Copy into temp string
   if (strlen(temp) == 1) { // Check if there is a sales type
-    if (temp[0] == 1 || temp[0] == 0) // Check if sales type is valid
+    if (temp[0] == '1' || temp[0] == '0') // Check if sales type is valid
       return true;
     else
       return false;
@@ -91,13 +91,13 @@ bool isValidInventory(string text) {
 }
 
 // Helper function for tokenize to check if first character is a delimiter
-bool is_delimiter(char c) {
+bool is_delimiter(char c) { 
   const string delimiters = " \t\n\r\f\v";
   return delimiters.find(c) != -1; // Checks if character is delimiter
 }
 
 // Create tokens
-string tokenize(string &s) {
+string tokenize(string & s) {
   string token;
   while (!s.empty() && is_delimiter(s[0])) {
     s.erase(0, 1);
