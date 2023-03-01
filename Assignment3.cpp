@@ -117,7 +117,6 @@ int main() {
   // Retrieve data from file  
   ifstream inFile;
   string fileName;
-  int lineNumber = 0;
 
   cout << "Enter input file:";
   cin >> fileName;
