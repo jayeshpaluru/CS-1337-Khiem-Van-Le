@@ -15,7 +15,7 @@ bool rowOK = false; // Check if token is valid
 
 // Check if PLU is 4 characters and alphanumeric
 
-bool isvalidPLU(const std::string & text) {
+bool isvalidPLU(const string &text) {
   // Check if PLU is 4 characters  
   if (text.size() != 4) {
     return false;
@@ -42,7 +42,7 @@ bool isValidType(string text) {
   char temp[10];
   strcpy(temp, text.c_str()); // Copy into temp string
   if (strlen(temp) == 1) { // Check if there is a sales type
-    if (temp[0] = 1 || temp[0] == 0) // Check if sales type is valid
+    if (temp[0] == 1 || temp[0] == 0) // Check if sales type is valid
       return true;
     else
       return false;
@@ -52,7 +52,7 @@ bool isValidType(string text) {
 }
 
 // Check if price has a decimal point and up to decimal places
-bool isValidPrice(const std::string & price) {
+bool isValidPrice(const string &price) {
   if (price.empty()) { // Check if there is a price
     return false;
   }
@@ -97,7 +97,7 @@ bool is_delimiter(char c) {
 }
 
 // Create tokens
-string tokenize(string & s) {
+string tokenize(string &s) {
   string token;
   while (!s.empty() && is_delimiter(s[0])) {
     s.erase(0, 1);
